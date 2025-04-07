@@ -92,48 +92,38 @@ const users = [
 ];
 
 //1
-// Отримати масив імен всіх користувачів (поле name).
-
 const getUserNames = (users) => {
-  // твій код
+  return users.map(({ name }) => name);
 };
 
 console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
 //2
-// Отримати масив об'єктів користувачів за кольором очей (поле eyeColor)
-
 const getUsersWithEyeColor = (users, color) => {
-  // твій код
+  return users.filter(({ eyeColor }) => eyeColor === color);
 };
 
 console.log(getUsersWithEyeColor(users, "blue")); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
 
 //3
-// Отримати масив імен користувачів за статтю (поле gender)
-
-const getUsersWithGender = (users, gender) => {
-  // твій код
+const getUsersWithGender = (users, gendere) => {
+  const genderFilter = users.filter(({ gender }) => gender === gendere);
+  return genderFilter.map(({ name }) => name);
 };
 
 console.log(getUsersWithGender(users, "male")); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //4
-// Отримати масив тільки неактивних користувачів (поле isActive).
-
 const getInactiveUsers = (users) => {
-  // твій код
+  return users.filter(({ isActive }) => isActive === false);
 };
 
 console.log(getInactiveUsers(users)); // [об'єкт Moore Hensley, об'єкт Ross Vazquez, об'єкт Blackburn Dotson]
 
 //5
-// Отримати користувача (не масив) по email (поле email, він унікальний).
-
-// Отримати користувача (не масив) по email (поле email, він унікальний).
-const getUserWithEmail = (users, email) => {
-  // твій код
+const getUserWithEmail = (users, emaile) => {
+  return users.find(({ email }) => email === emaile);
 };
 
 console.log(getUserWithEmail(users, "shereeanthony@kog.com")); // {об'єкт користувача Sheree Anthony}
